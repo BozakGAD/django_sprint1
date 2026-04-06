@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Последние публикации</h1>
+{% for post in posts %}
+<article>
+    <h2><a href="{% url 'blog:post_detail' id=post.id %}">{{ post.date }} | {{ post.location }}</a></h2>
+    <p>Категория: {{ post.category }}</p>
+    <p>{{ post.text|truncatewords:20 }}</p>
+</article>
+<hr>
+{% endfor %}
+{% endblock %}

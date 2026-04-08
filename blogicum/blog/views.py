@@ -58,4 +58,3 @@ def post_detail(request, id):
 def category_posts(request, category_slug):
     template = 'blog/category.html'
     return render(request, template, {'category_slug': category_slug})
-
